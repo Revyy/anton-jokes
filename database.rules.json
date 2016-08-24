@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "jokes": {
+      ".read": true,
+      ".write": true
+    }
+  }
+}
