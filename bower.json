@@ -1,0 +1,21 @@
+{
+  "name": "anton-jokes",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Revyy <jonas.olander91@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Revyy/anton-jokes",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper-ripple": "PolymerElements/paper-ripple#^1.0.8"
+  }
+}
