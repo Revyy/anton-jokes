@@ -3,6 +3,7 @@ const Immutable = require('immutable');
 
 export const INIT_JOKES_STATE = {
   jokes: Immutable.Map(),
+  recent: Immutable.Map(),
   currentJoke: {}
 }
 

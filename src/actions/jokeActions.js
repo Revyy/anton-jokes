@@ -8,9 +8,11 @@ export function initJokeHooks() {
   return (dispatch) => {
 
     let fb = firebase.database().ref('jokes');
-
     fb.on('child_added', (snapshot) => {
-      dispatch({type: JOKE_ACTIONS.ADD_JOKE, key: snapshot.key, joke: snapshot.val()});  
+      let joke = snapshot.val();
+      joke.weight = 1;
+      joke.key = snapshot.key;
+      dispatch({type: JOKE_ACTIONS.ADD_JOKE, key: snapshot.key, joke});  
     });
 
     fb.on('child_removed', (snapshot) => {
