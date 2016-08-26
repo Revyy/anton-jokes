@@ -10,6 +10,7 @@ class App extends Component {
 
   constructor() {
     super();
+    this.sayJoke = this.sayJoke.bind(this);
   }
 
   componentDidMount() {
@@ -20,6 +21,18 @@ class App extends Component {
     this.props.cleanUp();
   }
 
+  sayJoke() {
+    let lang = "Swedish Male";
+    responsiveVoice.speak(
+      this.props.currentJoke.context,
+      lang 
+      ,
+      {onend: () => {
+        responsiveVoice.speak(this.props.currentJoke.joke, lang);
+      }}
+    );
+  }
+
   render() {
     return (
       <div className="App">
@@ -28,6 +41,7 @@ class App extends Component {
           <h2>Welcome to Anton Jokes!</h2>
         </div>
         <div className="App-main">
+          <button onClick={this.sayJoke} disabled={this.props.currentJoke.context === undefined} className="fab Play-button"><paper-ripple></paper-ripple><i className="material-icons">volume_up</i></button>
           <div className="Joke">
             <h2>{this.props.currentJoke.context}</h2>
             <p>{this.props.currentJoke.joke}</p>

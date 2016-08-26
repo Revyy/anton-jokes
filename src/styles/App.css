@@ -31,13 +31,16 @@
 }
 
 .Joke {
+  position: relative;
   margin-top: 30px;
 }
 
 .Joke-button {
+  width: 52px;
+  height: 52px;
   position: absolute;
   background-color: #FFC107;
-  right: 16px;
+  right: 52px;
   top: 0px;
 }
 
@@ -47,10 +50,26 @@
 }
 
 .Add-button {
+  width: 52px;
+  height: 52px;
   position: absolute;
   background-color: #CDDC39;
-  right: 78px;
+  right: 114px;
   top: 0px;
+}
+
+.Play-button {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 6px;
+  width: 36px;
+  height: 36px;
+}
+
+.Play-button[disabled] {
+  visibility: hidden;
 }
 
 .Button-group {
@@ -60,8 +79,6 @@
 }
 
 .fab {
-  width: 52px;
-  height: 52px;
   transform: translateY( -50% );
   border: none;
   border-radius: 50%;
